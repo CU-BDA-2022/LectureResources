@@ -112,7 +112,9 @@ Slides:  [Lec05-ParamEstmn-BetaBinomial.pdf](Lec05-ParamEstmn-BetaBinomial.pdf)
 
 *Kruschke* Chapter 6 works through the beta-bernoulli model.
 
-## Lec06 - Continuous parameter estimation with discrete data, 2
+## Lec06 (alt) - Continuous parameter estimation with discrete data, 2
+
+[These notes cover a lecture swapped for other content in the 2022 version of the course. This year we cover $\delta$ functions later; these notes may be useful then.]
 
 Slides:  [Lec06-ParamEstmn-DirichletMultinomial.pdf](Lec06-ParamEstmn-DirichletMultinomial.pdf)
 
@@ -143,7 +145,7 @@ $$
 $$
 Essentially, summing over $j$ picks out the $j=i$ term from the summand. The Dirac $\delta$ function works analogously: integrating $f(x)\delta(x-c)$ over $x$ replaces $x$ with $c$, returning just $f(c)$—it just sets $x=c$ in the rest of the integrand. Incidentally, the $\delta$ function is symmetric; $\delta(c-x)$ has the same effect as $\delta(x-c)$. I sometimes exploit this in lectures, choosing the order of terms in the argument of a $\delta$ function to make it more readable.
 
-A few years after Dirac's introduction of $\delta(x)$, mathematician Laurent Schwartz put it on a firm mathematical footing, basically creating a new area of mathematics to do so: the theory of *distributions* (distinct from probability distributions) or *generalized functions* (there were hints of $\delta(x)$ and generalized functions in earlier work). The math literature in this area tends to be formal and technical, and not very accessible to non-mathematicians.
+A few years after Dirac's introduction of $\delta(x)$, mathematician Laurent Schwartz put it on a firm mathematical footing, basically creating a new area of mathematics to do so: the theory of *distributions* (distinct from probability distributions) or *generalized functions*. (There were hints of $\delta(x)$ and generalized functions in earlier work.) The math literature in this area tends to be formal and technical, and not very accessible to non-mathematicians.
 
 Wikipedia has a helpful article on the $\delta$ function: [Dirac delta function - Wikipedia](https://en.wikipedia.org/wiki/Dirac_delta_function). Two recent overviews by physicists are worth a look:
 
@@ -166,7 +168,9 @@ Slides:  [Lec07-ParamEstmn-GammaPoisson.pdf](Lec07-ParamEstmn-GammaPoisson.pdf)
 
 ### Suggested reading
 
-The typical derivation of the Poisson distribution in introductory statistics courses treats it as an approximation of the binomial distribution in a particular, nontrivial limit. We may cover this in a later lecture or lab. It is a simpler derivation than the first-principles approach we took in Lec07. But it masks the connection between the Poisson distribution and the Poisson point process, which I feel provides a better motivation. Our derivation, though more challenging, obtains the distribution directly as a model for the "random" distribution of events across an interval (of time or space). It illustrates some model-building ideas, makes explicit the key assumptions underlying the Poisson distribution, and provides a first exposure to a mathematical technique we'll encounter again later: solving  *functional equations* [(Wikipedia article)](https://en.wikipedia.org/wiki/Functional_equation).
+The typical derivation of the Poisson distribution in introductory statistics courses treats it as an approximation of the binomial distribution in a particular, nontrivial limit. We may cover this in a later lecture or lab. It is a simpler derivation than the first-principles approach we took in Lec07. But it masks the connection between the Poisson distribution and the Poisson point process, which I feel provides a better motivation. It also masks the analogies between Bernoulli and Poisson point processes on the one hand, and binomial and Poisson distributions on the other.
+
+Our derivation, though more challenging, obtains the distribution directly as a model for the "random" distribution of events across an interval (of time or space). It illustrates some model-building ideas, makes explicit the key assumptions underlying the Poisson distribution, and provides a first exposure to a mathematical technique we'll encounter again later: solving  *functional equations* [(Wikipedia article)](https://en.wikipedia.org/wiki/Functional_equation).
 
 If you'd like to read article/textbook derivations of the Poisson distribution along these lines, consider these sources:
 
@@ -237,7 +241,9 @@ Slides: [Lec10-ModelComparisonMargPdxn.pdf](Lec10-ModelComparisonMargPdxn.pdf)
 * [*Bayes or Bust? A Critical Examination of Bayesian Confirmation Theory*](https://mitpress.mit.edu/books/bayes-or-bust) (1992) by philosopher [John Earman](10.1038/350371a0).
 * The online [Stanford Encyclopedia of Philosophy](https://plato.stanford.edu/index.html) (a curated collection of review articles written by philosophers) includes an article, [Confirmation (Stanford Encyclopedia of Philosophy)](https://plato.stanford.edu/entries/confirmation/), addressing the notion of confirmation more generally, but including discussion of Bayesian confirmation theory.
 
-**$p$-values and frequentist hypothesis testing:** One of the most-used tools in frequentist statistics is the $p$-value, a quantification of how surprising an observed dataset is under a (simple) null hypothesis. Fisher introduced $p$-values as a non-frequentist (but frequentist-inspired) alternative to frequentist Neyman-Pearson hypothesis testing. Fisher and Neyman vehemently disagreed on the soundness of using $p$-values; Jeffreys (their contemporary) also criticized $p$-values. Nevertheless, $p$-value testing is easier to do than N-P testing, and the $p$-value seems to account for evidence that is omitted in N-P Type I and Type II error rates, so $p$-values soon came to dominate practice in statistical hypothesis testing. However, criticism of $p$-values continued through the 20th century, and has become particularly intense in the 21st century. I've put together some slides on $p$-values for summer schools on statistics for astronomers; see these slides for a quick overview of some of the issues with $p$-values, the relationship between $p$-values and Bayes factors, and entry points to the literature:
+**$p$-values and frequentist hypothesis testing:** One of the most-used tools in frequentist statistics is the $p$-value, a quantification of how surprising an observed dataset is under a (simple) null hypothesis. Fisher introduced $p$-values as a non-frequentist (but frequentist-inspired) alternative to frequentist Neyman-Pearson hypothesis testing. Fisher and Neyman vehemently disagreed on the soundness of using $p$-values; Jeffreys (their contemporary) also criticized $p$-values. Nevertheless, $p$-value testing is easier to do than N-P testing, and the $p$-value seems to account for evidence that is omitted in N-P Type I and Type II error rates, so $p$-values soon came to dominate practice in statistical hypothesis testing.
+
+However, criticism of $p$-values continued through the 20th century, and has become particularly intense in the 21st century. I've put together some slides on $p$-values for summer schools on statistics for astronomers; see these slides for a quick overview of some of the issues with $p$-values, the relationship between $p$-values and Bayes factors, and entry points to the literature:
 
 * ["Just call it a '$p$-value'—not a hypothesis probability, not a false alarm probability"](cast16-PValueNote.pdf)
 
@@ -274,7 +280,7 @@ Slides: [Lec12-BayesCompn-IIDMonteCarlo.pdf](Lec12-BayesCompn-IIDMonteCarlo.pdf)
   * Sample mean is unbiased for **ID** (identically distributed) samples
   * Standard deviation is $\sigma/\sqrt{N}$ for **IID** samples
 * (Weak) law of large numbers (LLN) bounds the probability of making an error of given magnitude, for any sample size
-* Central limit theorem gives the asymptotic (sample size $\righarrow\infty$) PDF of the error
+* Central limit theorem gives the asymptotic (sample size $\rightarrow\infty$) PDF of the error
 * Two IID sample generation methods:
   * Inverse CDF method
   * Accept/reject method
@@ -282,7 +288,7 @@ Slides: [Lec12-BayesCompn-IIDMonteCarlo.pdf](Lec12-BayesCompn-IIDMonteCarlo.pdf)
 
 ### Suggested reading
 
-The late Sir David MacKay's 1998 "Introduction to Monte Carlo methods" is a self-contained introduction to IID Monte Carlo and Markov Chain Monte Carlo (MCMC). A revised treatment (slightly improved and visually more readable) comprises Chapter 29 of David's 2003 book.  Both are free downloads from his website:
+The late Sir David MacKay's 1998 "Introduction to Monte Carlo methods" is a self-contained introduction to IID Monte Carlo and Markov Chain Monte Carlo (MCMC). A revised treatment (slightly improved and visually more readable) comprises Chapter 29 of David's 2003 book (cited above).  Both are free downloads from his website:
 
 * "Introduction to Monte Carlo methods," via [David MacKay: Publications: Monte Carlo methods](http://www.inference.org.uk/mackay/BayesMC.html)
 * Chapter 29 of [&sext; *Information Theory, Inference, and Learning Algorithms*](http://www.inference.org.uk/mackay/Book.html)
